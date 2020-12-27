@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "652428052489",
+    "project_id": "tvsc-49a7f",
+    "storage_bucket": "tvsc-49a7f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:652428052489:android:9c651e1eb143e3cca810d8",
+        "android_client_info": {
+          "package_name": "com.tvscred"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "652428052489-l6udhrtoih4n7gh9j66tjl8juslo78il.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_-NkLTI8fwqTIgxamdk_mN1_KIeIotNM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "652428052489-l6udhrtoih4n7gh9j66tjl8juslo78il.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
