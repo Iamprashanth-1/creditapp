@@ -43,6 +43,8 @@ android {
         targetSdkVersion 29
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
+        multiDexEnabled true
+
 
     }
 
@@ -61,5 +63,7 @@ flutter {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+   // implementation "com.android.support:multiDexEnabled:1.0.3"
+    implementation 'com.google.firebase:firebase-ml-vision:24.0.3'
 }
 apply plugin: 'com.google.gms.google-services'

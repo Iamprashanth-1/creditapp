@@ -5,7 +5,7 @@ import 'splash.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  final String title = 'Text Recognition';
+  final String title = 'Scan and upload details';
 
   @override
   Widget build(BuildContext context) => MaterialApp(

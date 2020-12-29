@@ -4,6 +4,7 @@ import 'package:tvscred/widget/text_recognition_widget.dart';
 import 'dart:async';
 import 'main.dart';
 //import './login/login_page.dart';
+import 'log.dart';
 
 class MyApps extends StatelessWidget {
   final String title = 'Text Recognition';
@@ -32,15 +33,23 @@ class _MyHomePageState extends State<MyHomePage> {
         () => Navigator.pushReplacement(
             context,
             MaterialPageRoute(
-                builder: (context) => MainPage(title: "Text Recognization")
-                //LoginScreen()
-                )));
+                builder: (context) =>
+                    //MainPage(title: "Text Recognization")
+                    //SignInDemo()
+                    //  Dash()
+                    Logg())));
   }
 
   @override
   Widget build(BuildContext context) {
     return Container(
         color: Colors.white,
-        child: FlutterLogo(size: MediaQuery.of(context).size.height));
+        child: Container(
+          decoration: BoxDecoration(
+              image: DecorationImage(
+            image: NetworkImage(
+                "https://th.bing.com/th/id/OIP.7Ee6fac3lfxTtM0hvkmyIQHaHa?w=192&h=192&c=7&o=5&dpr=1.25&pid=1.7"),
+          )),
+        ));
   }
 }
