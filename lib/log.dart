@@ -111,10 +111,10 @@ class Logg extends StatelessWidget {
           ),
         ),
         buttonTheme: LoginButtonTheme(
-          //splashColor: Colors.black,
+          splashColor: Colors.black,
 
           backgroundColor: Colors.blue[300],
-          // highlightColor: Colors.lightGreen,
+          highlightColor: Colors.lightGreen,
           elevation: 15.0,
           highlightElevation: 8.0,
 

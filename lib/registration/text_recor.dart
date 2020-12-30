@@ -9,19 +9,14 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:fluttertoast/fluttertoast.dart';
-import '../main.dart';
-import 'package:flutter/scheduler.dart';
-import 'package:rflutter_alert/rflutter_alert.dart';
-import 'package:status_alert/status_alert.dart';
-
 //import 'package:cool_alert/cool_alert.dart';
 
 //import 'package:camera/camera.dart';
 
-import 'controls_widget.dart';
+import 'controls_widgetr.dart';
 
-class TextRecognitionWidget extends StatefulWidget {
-  const TextRecognitionWidget({
+class TextRecognitionWidgetr extends StatefulWidget {
+  const TextRecognitionWidgetr({
     Key key,
   }) : super(key: key);
 
@@ -29,7 +24,7 @@ class TextRecognitionWidget extends StatefulWidget {
   _TextRecognitionWidgetState createState() => _TextRecognitionWidgetState();
 }
 
-class _TextRecognitionWidgetState extends State<TextRecognitionWidget> {
+class _TextRecognitionWidgetState extends State<TextRecognitionWidgetr> {
   String text = '';
   File image;
   // Map<String, String> jas={};
@@ -84,124 +79,22 @@ class _TextRecognitionWidgetState extends State<TextRecognitionWidget> {
 
     final text = await FirebaseMLApi.recogniseText(image);
     setText(text);
-    //_onAlertButtonsPressed(context);
-    // scanTexts(text);
-    showAlertDialog(context, text);
-
     print('sai kart');
-
     //var res=await client.get('https://9748e5dd28d6.ngrok.io');
     //print(res.body);
-
-    // Navigator.of(context).pop();
-  }
-
-  Future scanTexts(String tex) async {
-    //final String tex = '';
-    showDialog(
-      context: context,
-      child: Center(
-        child: Text(tex),
-      ),
-    );
-  }
-
-  showAlertDialog(BuildContext context, String tex) {
-    // Create button
-    Widget okButton = FlatButton(
-      child: Text("OK"),
-      onPressed: () {
-        //scans();
-        //SchedulerBinding.instance.addPostFrameCallback((_) {
-        scans();
-
-        Navigator.of(context, rootNavigator: true).pop('dialog');
-      },
-    );
-    Widget rescan = FlatButton(
-      child: Text("rescan"),
-      onPressed: () {
-        Navigator.of(context, rootNavigator: true).pop('dialog');
-      },
-    );
-
-    // Create AlertDialog
-    AlertDialog alert = AlertDialog(
-      title: Text("Please verify your details"),
-      content: Text(tex),
-      actions: [
-        okButton,
-        rescan,
-      ],
-    );
-
-    // show the dialog
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return alert;
-      },
-    );
-  }
-
-  _onAlertButtonsPressed(context) {
-    Alert(
-      context: context,
-      type: AlertType.warning,
-      title: "RFLUTTER ALERT",
-      desc: "Flutter is more awesome with RFlutter Alert.",
-      buttons: [
-        DialogButton(
-          child: Text(
-            "FLAT",
-            style: TextStyle(color: Colors.white, fontSize: 18),
-          ),
-          onPressed: () => Navigator.pop(context),
-          color: Color.fromRGBO(0, 179, 134, 1.0),
-        ),
-        DialogButton(
-          child: Text(
-            "GRADIENT",
-            style: TextStyle(color: Colors.white, fontSize: 18),
-          ),
-          onPressed: () => Navigator.pop(context),
-          gradient: LinearGradient(colors: [
-            Color.fromRGBO(116, 116, 191, 1.0),
-            Color.fromRGBO(52, 138, 199, 1.0)
-          ]),
-        )
-      ],
-    ).show();
-  }
-
-  void scans() async {
     final String apiUrl = "https://damp-river-68332.herokuapp.com/license";
 
     final responses = await http.post(apiUrl, body: jas);
     print(responses.body);
     print(responses.statusCode);
-    print('nice');
-
     if (responses.statusCode == 200) {
       //showAlertDialog(context);
-      dfss(" Verification Success");
+      df(" Verification Success");
     } else {
-      dfs("failed");
+      df("failed");
     }
-  }
 
-  void dfs(String sss) {
-    StatusAlert.show(context,
-        duration: Duration(seconds: 2),
-        title: sss,
-        configuration: IconConfiguration(icon: Icons.error_outline));
-  }
-
-  void dfss(String sss) {
-    StatusAlert.show(context,
-        duration: Duration(seconds: 2),
-        title: sss,
-        configuration: IconConfiguration(icon: Icons.done));
+    Navigator.of(context).pop();
   }
 
   void df(String ss) {
@@ -266,6 +159,48 @@ class _TextRecognitionWidgetState extends State<TextRecognitionWidget> {
     }
     print(jas);
   }
+}
+
+class MyAlert extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(20.0),
+      child: RaisedButton(
+        child: Text('Show alert'),
+        onPressed: () {
+          showAlertDialog(context);
+        },
+      ),
+    );
+  }
+}
+
+showAlertDialog(BuildContext context) {
+  // Create button
+  Widget okButton = FlatButton(
+    child: Text("OK"),
+    onPressed: () {
+      Navigator.of(context).pop();
+    },
+  );
+
+  // Create AlertDialog
+  AlertDialog alert = AlertDialog(
+    title: Text("Simple Alert"),
+    content: Text("This is an alert message."),
+    actions: [
+      okButton,
+    ],
+  );
+
+  // show the dialog
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return alert;
+    },
+  );
 }
 
 class SnackBarPage extends StatelessWidget {

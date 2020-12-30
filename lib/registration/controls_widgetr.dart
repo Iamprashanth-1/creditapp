@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import "./text_recognition_widget.dart";
+import "./text_recor.dart";
 
 class ControlsWidget extends StatelessWidget {
   final VoidCallback onClickedPickImage;
@@ -27,7 +27,7 @@ class ControlsWidget extends StatelessWidget {
           const SizedBox(height: 30, width: 1),
           RaisedButton(
             onPressed: onClickedScanText,
-            child: Text('Scan Image'),
+            child: Text('Upload'),
           ),
           const SizedBox(width: 0.1),
           RaisedButton(
