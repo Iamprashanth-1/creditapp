@@ -7,7 +7,7 @@ import 'main.dart';
 import 'log.dart';
 
 class MyApps extends StatelessWidget {
-  final String title = 'Text Recognition';
+  final String title = 'Welcome';
 
   @override
   Widget build(BuildContext context) => MaterialApp(

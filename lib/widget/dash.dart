@@ -2,15 +2,17 @@ import 'package:flutter/material.dart';
 import '.././main.dart';
 import '../registration/text_recor.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import '../blue.dart';
+import '../splashs.dart';
 
 //void main() => runApp(MyApp());
 final List<String> imgList = [
-  'https://images.unsplash.com/photo-1520342868574-5fa3804e551c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6ff92caffcdd63681a35134a6770ed3b&auto=format&fit=crop&w=1951&q=80',
-  'https://images.unsplash.com/photo-1522205408450-add114ad53fe?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=368f45b0888aeb0b7b08e3a1084d3ede&auto=format&fit=crop&w=1950&q=80',
-  'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=94a1e718d89ca60a6337a6008341ca50&auto=format&fit=crop&w=1950&q=80',
-  'https://images.unsplash.com/photo-1523205771623-e0faa4d2813d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=89719a0d55dd05e2deae4120227e6efc&auto=format&fit=crop&w=1953&q=80',
-  'https://images.unsplash.com/photo-1508704019882-f9cf40e475b4?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8c6e5e3aba713b17aa1fe71ab4f0ae5b&auto=format&fit=crop&w=1352&q=80',
-  'https://images.unsplash.com/photo-1519985176271-adb1088fa94c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a0c8d632e977f94e5d312d9893258f59&auto=format&fit=crop&w=1355&q=80'
+  'https://www.tvsmotor.com/-/media/Feature/Our-Stories/2020-TVS-Apache-RR-310-BS6-D.png?h=786&w=436&la=en&hash=2000C3FD696B2C5CB3D54C37E9AE73FC',
+  'https://www.tvsmotor.com/-/media/Feature/Our-Stories/Ntorq-Graphic-Novel-D.jpg?h=786&w=436&la=en&hash=F491593B614BD564204B107C4238CA3E',
+  'https://www.tvsmotor.com/-/media/Feature/Our-Stories/TVS-iQube-EV-D.png?h=786&w=436&la=en&hash=B0E03ADDF7A72200D7209DFA33BBEF7F',
+  'https://www.tvsmotor.com/-/media/Feature/About-US/racing-hero.jpg',
+  'https://www.tvsmotor.com/-/media/Feature/About-US/35-Million.png?h=261&w=434&la=en&hash=3DF006B1F0FC78236ABBC0CF1A2E9855',
+  'https://www.tvsmotor.com/-/media/Feature/About-US/vehicle-for-everyone-2.jpg?h=261&w=434&la=en&hash=DE4F7BED3DCC640B3D6933EC2503F23E'
 ];
 
 /// This is the main application widget.
@@ -38,9 +40,7 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
 
     return Scaffold(
       //backgroundColor: Colors.blue,
-      backgroundColor: Colors.transparent,
-
-      appBar: AppBar(title: Text('Welcome'), backgroundColor: Colors.blue[200]),
+      // backgroundColor: Colors.transparent,
       body: Column(children: [
         CarouselSlider(
           items: imgList
@@ -112,20 +112,6 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   int _selectedIndex = 0;
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text(
-      'Welcome To TvsCREdit',
-      style: optionStyle,
-    ),
-    Text(
-      'You are done with KYC',
-      style: optionStyle,
-    ),
-    Text(
-      'You completed Registration',
-      style: optionStyle,
-    ),
-  ];
 
   void _onItemTapped(int index) {
     setState(() {
@@ -136,12 +122,15 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       Navigator.push(
           context,
           MaterialPageRoute(
-              builder: (context) => MainPage(title: "Text Recognization")));
+              builder: (context) => MainPage(title: "KYC Verification")));
     } else if (_selectedIndex == 2) {
       Navigator.push(
           context,
           MaterialPageRoute(
-              builder: (context) => Registration(title: "Registration")));
+              builder: (context) => Registration(title: "Registration Page")));
+    } else if (_selectedIndex == 3) {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => SplashScreen()));
     }
   }
 
@@ -157,7 +146,8 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
     ]);
     return Scaffold(
       appBar: AppBar(
-        title: const Text('TVS KYC and Vehicle status check'),
+        title: Text('TVS KYC and Vehicle status check'),
+        toolbarHeight: 100,
         centerTitle: true,
       ),
       // body: Center(
@@ -166,30 +156,44 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       body: CarouselWithIndicatorDemo(),
 
       bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.business),
-            label: 'KYC',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Registration',
-          ),
-        ],
-        currentIndex: _selectedIndex,
-        selectedItemColor: Colors.amber[800],
-        onTap: _onItemTapped,
-      ),
+          //backgroundColor: Colors.blue,
+          items: const <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: 'Home',
+              backgroundColor: Colors.blue,
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.business),
+              label: 'KYC',
+              backgroundColor: Colors.blue,
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.people),
+              label: 'Registration',
+              backgroundColor: Colors.blue,
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.bluetooth_audio),
+              label: 'OBD',
+              backgroundColor: Colors.blue,
+            ),
+          ],
+          currentIndex: _selectedIndex,
+          selectedItemColor: Colors.amber[800],
+          backgroundColor: Colors.blue,
+          onTap: _onItemTapped,
+          iconSize: 40,
+          elevation: 5),
     );
   }
 }
 
+//
+
 class Registration extends StatefulWidget {
   final String title;
+  
 
   const Registration({
     @required this.title,
@@ -206,6 +210,10 @@ class _MainPageState extends State<Registration> {
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(
           title: Text(widget.title),
+          centerTitle: true,
+          toolbarHeight:60,
+
+          
         ),
         body: Padding(
           padding: const EdgeInsets.all(8),

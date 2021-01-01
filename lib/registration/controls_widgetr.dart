@@ -27,7 +27,7 @@ class ControlsWidget extends StatelessWidget {
           const SizedBox(height: 30, width: 1),
           RaisedButton(
             onPressed: onClickedScanText,
-            child: Text('Upload'),
+            child: Text('Scan image'),
           ),
           const SizedBox(width: 0.1),
           RaisedButton(

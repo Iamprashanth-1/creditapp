@@ -39,7 +39,7 @@ class _TextRecognitionWidgetState extends State<TextRecognitionWidget> {
         child: Column(
           children: [
             Expanded(child: buildImage()),
-            const SizedBox(height: 16),
+            const SizedBox(height: 168),
             ControlsWidget(
               onClickedPickImage: pickImage,
               onClickedScanText: scanText,
@@ -48,11 +48,6 @@ class _TextRecognitionWidgetState extends State<TextRecognitionWidget> {
               },
               onClickedcam: cam,
             ),
-            const SizedBox(height: 16),
-            TextAreaWidget(
-              text: text,
-              onClickedCopy: copyToClipboard,
-            ),
           ],
         ),
       );
@@ -60,7 +55,7 @@ class _TextRecognitionWidgetState extends State<TextRecognitionWidget> {
   Widget buildImage() => Container(
         child: image != null
             ? Image.file(image)
-            : Icon(Icons.photo, size: 80, color: Colors.black),
+            : Icon(Icons.photo, size: 40, color: Colors.black),
       );
 
   Future pickImage() async {
@@ -73,6 +68,15 @@ class _TextRecognitionWidgetState extends State<TextRecognitionWidget> {
     setImage(File(files.path));
   }
 
+  Future scanTe() {
+    showDialog(
+      context: context,
+      child: Center(
+        child: CircularProgressIndicator(),
+      ),
+    );
+  }
+
   Future scanText() async {
     showDialog(
       context: context,
@@ -81,9 +85,15 @@ class _TextRecognitionWidgetState extends State<TextRecognitionWidget> {
       ),
     );
     //var client = new http.Client();
+    if(image==null){
+      dfkk('Please select image');
+      Navigator.of(context, rootNavigator: true).pop('dialog');
 
+    }
+    else{
     final text = await FirebaseMLApi.recogniseText(image);
     setText(text);
+
     //_onAlertButtonsPressed(context);
     // scanTexts(text);
     showAlertDialog(context, text);
@@ -95,7 +105,13 @@ class _TextRecognitionWidgetState extends State<TextRecognitionWidget> {
 
     // Navigator.of(context).pop();
   }
-
+  }
+  void dfkk(String sss) {
+    StatusAlert.show(context,
+        duration: Duration(seconds: 2),
+        title: sss,
+        configuration: IconConfiguration(icon: Icons.error));
+  }
   Future scanTexts(String tex) async {
     //final String tex = '';
     showDialog(
@@ -121,7 +137,16 @@ class _TextRecognitionWidgetState extends State<TextRecognitionWidget> {
     Widget rescan = FlatButton(
       child: Text("rescan"),
       onPressed: () {
-        Navigator.of(context, rootNavigator: true).pop('dialog');
+       Navigator.of(context, rootNavigator: true).pop();
+        Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+                builder: (context) =>
+                    MainPage(title: "TVS KYC and Registration"))
+            //SignInDemo()
+            //  Dash()
+            );
+        Navigator.of(context, rootNavigator: true).pop();
       },
     );
 
@@ -185,8 +210,12 @@ class _TextRecognitionWidgetState extends State<TextRecognitionWidget> {
     if (responses.statusCode == 200) {
       //showAlertDialog(context);
       dfss(" Verification Success");
+      Navigator.of(context, rootNavigator: true).pop();
+
     } else {
       dfs("failed");
+      Navigator.of(context, rootNavigator: true).pop();
+
     }
   }
 

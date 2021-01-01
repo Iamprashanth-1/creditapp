@@ -9,11 +9,16 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:merge_images/merge_images.dart';
+import 'package:status_alert/status_alert.dart';
+import '../widget/dash.dart';
+
 //import 'package:cool_alert/cool_alert.dart';
 
 //import 'package:camera/camera.dart';
 
 import 'controls_widgetr.dart';
+import 'dart:ui' as ui;
 
 class TextRecognitionWidgetr extends StatefulWidget {
   const TextRecognitionWidgetr({
@@ -27,6 +32,7 @@ class TextRecognitionWidgetr extends StatefulWidget {
 class _TextRecognitionWidgetState extends State<TextRecognitionWidgetr> {
   String text = '';
   File image;
+
   // Map<String, String> jas={};
 
   @override
@@ -34,7 +40,7 @@ class _TextRecognitionWidgetState extends State<TextRecognitionWidgetr> {
         child: Column(
           children: [
             Expanded(child: buildImage()),
-            const SizedBox(height: 16),
+            const SizedBox(height: 10),
             ControlsWidget(
               onClickedPickImage: pickImage,
               onClickedScanText: scanText,
@@ -42,11 +48,6 @@ class _TextRecognitionWidgetState extends State<TextRecognitionWidgetr> {
                 clear(context);
               },
               onClickedcam: cam,
-            ),
-            const SizedBox(height: 16),
-            TextAreaWidget(
-              text: text,
-              onClickedCopy: copyToClipboard,
             ),
           ],
         ),
@@ -60,12 +61,47 @@ class _TextRecognitionWidgetState extends State<TextRecognitionWidgetr> {
 
   Future pickImage() async {
     final file = await ImagePicker().getImage(source: ImageSource.gallery);
-    setImage(File(file.path));
+    ui.Image image1 =
+        await ImagesMergeHelper.loadImageFromFile(File(file.path));
+    final file1 = await ImagePicker().getImage(source: ImageSource.gallery);
+    ui.Image image2 =
+        await ImagesMergeHelper.loadImageFromFile(File(file1.path));
+
+    ui.Image image = await ImagesMergeHelper.margeImages([image1, image2],
+
+        ///required,images list
+        fit: true,
+
+        ///scale image to fit others
+        direction: Axis.vertical,
+
+        ///direction of images
+        backgroundColor: Colors.black26);
+    File file3 = await ImagesMergeHelper.imageToFile(image);
+    //print(file);
+    setImage(file3);
   }
 
   Future cam() async {
-    final files = await ImagePicker().getImage(source: ImageSource.camera);
-    setImage(File(files.path));
+    final file3 = await ImagePicker().getImage(source: ImageSource.camera);
+    ui.Image image3 =
+        await ImagesMergeHelper.loadImageFromFile(File(file3.path));
+    final file4 = await ImagePicker().getImage(source: ImageSource.camera);
+    ui.Image image4 =
+        await ImagesMergeHelper.loadImageFromFile(File(file4.path));
+
+    ui.Image image0 = await ImagesMergeHelper.margeImages([image3, image4],
+
+        ///required,images list
+        fit: true,
+
+        ///scale image to fit others
+        direction: Axis.vertical,
+
+        ///direction of images
+        backgroundColor: Colors.black26);
+    File file5 = await ImagesMergeHelper.imageToFile(image0);
+    setImage(file5);
   }
 
   Future scanText() async {
@@ -76,25 +112,115 @@ class _TextRecognitionWidgetState extends State<TextRecognitionWidgetr> {
       ),
     );
     //var client = new http.Client();
+    if (image == null) {
+      dfkk('Please select image');
+      Navigator.of(context, rootNavigator: true).pop('dialog');
+    } else {
+      final text = await FirebaseMLApi.recogniseText(image);
+      setText(text);
 
-    final text = await FirebaseMLApi.recogniseText(image);
-    setText(text);
-    print('sai kart');
-    //var res=await client.get('https://9748e5dd28d6.ngrok.io');
-    //print(res.body);
+      //_onAlertButtonsPressed(context);
+      // scanTexts(text);
+      showAlertDialog(context, text);
+
+      print('sai kart');
+
+      //var res=await client.get('https://9748e5dd28d6.ngrok.io');
+      //print(res.body);
+
+      // Navigator.of(context).pop();
+    }
+  }
+
+  void dfkk(String sss) {
+    StatusAlert.show(context,
+        duration: Duration(seconds: 2),
+        title: sss,
+        configuration: IconConfiguration(icon: Icons.error));
+  }
+
+  void scans() async {
     final String apiUrl = "https://damp-river-68332.herokuapp.com/license";
 
     final responses = await http.post(apiUrl, body: jas);
-    print(responses.body);
-    print(responses.statusCode);
+    // print(responses.body);
+    //print(responses.statusCode);
+    print('nice');
+
     if (responses.statusCode == 200) {
       //showAlertDialog(context);
-      df(" Verification Success");
+      dfss(" Verification Success");
+      Navigator.of(context, rootNavigator: true).pop();
     } else {
-      df("failed");
+      dfs("failed");
+      Navigator.of(context, rootNavigator: true).pop();
     }
+  }
 
-    Navigator.of(context).pop();
+  void dfs(String sss) {
+    StatusAlert.show(context,
+        duration: Duration(seconds: 2),
+        title: sss,
+        configuration: IconConfiguration(icon: Icons.error_outline));
+  }
+
+  void dfss(String sss) {
+    StatusAlert.show(context,
+        duration: Duration(seconds: 2),
+        title: sss,
+        configuration: IconConfiguration(icon: Icons.done));
+  }
+
+  Future scanTexts(String tex) async {
+    showDialog(
+      context: context,
+      child: Center(
+        child: Text(tex),
+      ),
+    );
+  }
+
+  showAlertDialog(BuildContext context, String tex) {
+    // Create button
+    Widget okButton = FlatButton(
+      child: Text("OK"),
+      onPressed: () {
+        //scans();
+        //SchedulerBinding.instance.addPostFrameCallback((_) {
+        scans();
+
+        Navigator.of(context, rootNavigator: true).pop('dialog');
+      },
+    );
+    Widget rescan = FlatButton(
+      child: Text("rescan"),
+      onPressed: () {
+        Navigator.of(context, rootNavigator: true).pop();
+
+        Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+                builder: (context) => Registration(title: "Registration")));
+      },
+    );
+
+    // Create AlertDialog
+    AlertDialog alert = AlertDialog(
+      title: Text("Please verify your details"),
+      content: Text(tex),
+      actions: [
+        okButton,
+        rescan,
+      ],
+    );
+
+    // show the dialog
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return alert;
+      },
+    );
   }
 
   void df(String ss) {
