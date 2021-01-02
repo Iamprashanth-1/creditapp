@@ -31,7 +31,6 @@ class _HomePageState extends State<HomePage> {
 
   @override
   void initState() {
-
     Future.delayed(Duration.zero, () {
       _autoConnect(context);
     });
@@ -46,8 +45,7 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         elevation: 0,
         leading: Icon(Icons.arrow_right_outlined, color: Color(0xFF083386)),
-        backgroundColor:Color(0xFF083386),
-
+        backgroundColor: Color(0xFF083386),
         actions: <Widget>[
           Padding(
               padding: EdgeInsets.only(right: 20, top: 20),
@@ -129,7 +127,12 @@ class _HomePageState extends State<HomePage> {
                       }
                       return Padding(
                         padding: EdgeInsets.all(10.0),
-                        child: Text("Turn on bluetooth"),
+                        child: Text(
+                          "Turn on bluetooth",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 22),
+                        ),
                       );
                     }
                     return CircularProgressIndicator();
@@ -153,7 +156,7 @@ class _HomePageState extends State<HomePage> {
                             children: <Widget>[
                               Icon(Icons.developer_board),
                               SizedBox(height: 10),
-                              Text("Experiences"),
+                              Text("Experiences",),
                             ],
                           ),
                         ),

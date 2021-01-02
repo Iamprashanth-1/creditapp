@@ -221,7 +221,8 @@ class _BluetoothAppState extends State<BluetoothApp> {
                         'Enable Bluetooth',
                         style: TextStyle(
                           color: Colors.black,
-                          fontSize: 16,
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
                     ),
