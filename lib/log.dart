@@ -41,7 +41,7 @@ class Logg extends StatelessWidget {
     }
 
     return FlutterLogin(
-      title: 'TVSCREDIT',
+      title: 'TVS CREDIT',
       logo: 'assets/images/dan.jpg',
       onLogin: _authUser,
       onSignup: _authUser,
@@ -90,7 +90,11 @@ class Logg extends StatelessWidget {
             backgroundColor: Colors.white,
             color: Color(0xFF083386),
           ),
-          labelStyle: TextStyle(fontSize: 16, color: Colors.white),
+<<<<<<< HEAD
+          // labelStyle: TextStyle(fontSize: 16, color: Colors.white),
+=======
+          labelStyle: TextStyle(fontSize: 18, color: Colors.white),
+>>>>>>> 6accd7e7bb1d7f2755eb086efe23aa11ff1e4f44
           enabledBorder: UnderlineInputBorder(
             borderSide: BorderSide(color: Colors.blue.shade700, width: 4),
             borderRadius: inputBorder,

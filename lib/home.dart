@@ -45,6 +45,9 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
+        leading: Icon(Icons.arrow_right_outlined, color: Colors.blue[900]),
+        backgroundColor:Color(0xFF083386),
+
         actions: <Widget>[
           Padding(
               padding: EdgeInsets.only(right: 20, top: 20),
