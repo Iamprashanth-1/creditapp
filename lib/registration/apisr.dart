@@ -83,7 +83,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       title: 'Update Data Example',
       theme: ThemeData(
-        primarySwatch: const Color(0xFF757575),
+        primaryColor: const Color(0xFF757575),
       ),
       home: Scaffold(
         appBar: AppBar(
