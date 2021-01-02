@@ -139,6 +139,27 @@ class _HomePageState extends State<HomePage> {
                   },
                 ),
                 Padding(
+                  padding: EdgeInsets.all(10.0),
+                  child: RaisedButton(
+                    onPressed: () {},
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10)),
+                    elevation: 1.5,
+                    color: Color(0xFFE8171A),
+                    padding: const EdgeInsets.all(16),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: <Widget>[
+                        Icon(Icons.speed_sharp, color: Colors.white),
+                        SizedBox(height: 10),
+                        Text("Get all details",
+                            style: TextStyle(color: Colors.white, fontSize: 20),
+                            textAlign: TextAlign.center),
+                      ],
+                    ),
+                  ),
+                ),
+                Padding(
                   padding:
                       const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
                   child: Row(
@@ -179,7 +200,10 @@ class _HomePageState extends State<HomePage> {
                                   color: Colors.white),
                               SizedBox(height: 10),
                               Text("Vehicle Details",
+<<<<<<< HEAD
 
+=======
+>>>>>>> 10fe06c8523376a539b583166a707df053729bb7
                                   style: TextStyle(color: Colors.white),
                                   textAlign: TextAlign.center),
                             ],
@@ -260,7 +284,10 @@ class _HomePageState extends State<HomePage> {
                               Icon(Icons.power_rounded, color: Colors.white),
                               SizedBox(height: 10),
                               Text("Horse Power",
+<<<<<<< HEAD
 
+=======
+>>>>>>> 10fe06c8523376a539b583166a707df053729bb7
                                   style: TextStyle(color: Colors.white),
                                   textAlign: TextAlign.center),
                             ],
