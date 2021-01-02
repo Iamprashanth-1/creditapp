@@ -53,10 +53,10 @@ class Logg extends StatelessWidget {
       onRecoverPassword: _recoverPassword,
       theme: LoginTheme(
         primaryColor: Colors.white,
-        accentColor: Colors.blue,
-        errorColor: Colors.blue,
+        accentColor: Color(0xFF083386),
+        errorColor: Color(0xFF083386),
         titleStyle: TextStyle(
-          color: Colors.blue,
+          color: Color(0xFF083386),
           fontFamily: 'Quicksand',
           fontStyle: FontStyle.italic,
           letterSpacing: 4,
@@ -64,17 +64,19 @@ class Logg extends StatelessWidget {
         bodyStyle: TextStyle(
           fontStyle: FontStyle.italic,
           decoration: TextDecoration.underline,
+          color: Colors.white,
         ),
         textFieldStyle: TextStyle(
-          color: Colors.blue,
-          shadows: [Shadow(color: Colors.white, blurRadius: 2)],
+          color: Colors.white,
+          fontSize: 22,
+          shadows: [Shadow(color: Colors.white, blurRadius: 0)],
         ),
         buttonStyle: TextStyle(
           fontWeight: FontWeight.w800,
           color: Colors.white,
         ),
         cardTheme: CardTheme(
-          color: Colors.blue[100],
+          color: Color(0xFF083386),
           elevation: 5,
           margin: EdgeInsets.only(top: 15),
           shape: ContinuousRectangleBorder(
@@ -82,13 +84,13 @@ class Logg extends StatelessWidget {
         ),
         inputTheme: InputDecorationTheme(
           filled: true,
-          fillColor: Colors.purple.withOpacity(.1),
+          fillColor: Colors.grey.withOpacity(.1),
           contentPadding: EdgeInsets.zero,
           errorStyle: TextStyle(
             backgroundColor: Colors.white,
-            color: Colors.blue,
+            color: Color(0xFF083386),
           ),
-          labelStyle: TextStyle(fontSize: 12),
+          labelStyle: TextStyle(fontSize: 22, color: Colors.white),
           enabledBorder: UnderlineInputBorder(
             borderSide: BorderSide(color: Colors.blue.shade700, width: 4),
             borderRadius: inputBorder,
@@ -111,11 +113,11 @@ class Logg extends StatelessWidget {
           ),
         ),
         buttonTheme: LoginButtonTheme(
-          splashColor: Colors.black,
+          splashColor: Colors.white,
 
           backgroundColor: Colors.blue[300],
           highlightColor: Colors.lightGreen,
-          elevation: 15.0,
+          elevation: 1.0,
           highlightElevation: 8.0,
 
           //shape: BeveledRectangleBorder(

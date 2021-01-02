@@ -93,6 +93,7 @@ class Dash extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      color: Color(0xFF083386),
       title: _title,
       home: MyStatefulWidget(),
     );
@@ -148,6 +149,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       appBar: AppBar(
         title: Text('TVS KYC and Vehicle status check'),
         toolbarHeight: 60,
+        backgroundColor: Color(0xFF083386),
         centerTitle: true,
       ),
       // body: Center(
@@ -213,6 +215,7 @@ class _MainPageState extends State<Registration> {
         appBar: AppBar(
           title: Text(widget.title),
           centerTitle: true,
+          backgroundColor: Color(0xFF083386),
           toolbarHeight: 60,
         ),
         body: Padding(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import "./text_recognition_widget.dart";
+import 'package:draggable_floating_button/draggable_floating_button.dart';
 
 class ControlsWidget extends StatelessWidget {
   final VoidCallback onClickedPickImage;
@@ -15,26 +16,32 @@ class ControlsWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           const SizedBox(width: 0.1),
           RaisedButton(
             onPressed: onClickedPickImage,
             child: Text('Pick Image'),
+            color: Color(0xFF083386),
+            textColor: Colors.white,
           ),
           const SizedBox(height: 30, width: 1),
           RaisedButton(
             onPressed: onClickedScanText,
             child: Text('Scan Image'),
+            color: Color(0xFF083386),
+            textColor: Colors.white,
           ),
-          const SizedBox(width: 1),
-          RaisedButton(
+          FloatingActionButton.extended(
+            icon: Icon(Icons.clear),
+            label: Text("Clear"),
             onPressed: () {
               gg(context);
               onClickedClear();
             },
-            child: Text('Clear'),
-          )
+            backgroundColor: Colors.red,
+            foregroundColor: Colors.white,
+          ),
         ],
       );
 }

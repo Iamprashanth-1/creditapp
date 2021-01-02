@@ -15,7 +15,7 @@ class Blue extends StatelessWidget {
       title: 'OBD status check',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primaryColor: Color(0xFF083386),
       ),
       home: BluetoothApp(),
     );
@@ -67,7 +67,7 @@ class _BluetoothAppState extends State<BluetoothApp> {
     'neutralBorderColor': Colors.transparent,
     'onTextColor': Colors.green[700],
     'offTextColor': Colors.red[700],
-    'neutralTextColor': Colors.blue,
+    'neutralTextColor': Color(0xFF083386),
   };
 
   // To track whether the device is still connected to Bluetooth
@@ -347,7 +347,7 @@ class _BluetoothAppState extends State<BluetoothApp> {
                     ],
                   ),
                   Container(
-                    color: Colors.blue,
+                    color: Color(0xFF083386),
                   ),
                 ],
               ),

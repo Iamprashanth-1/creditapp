@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import "./text_recor.dart";
+import 'package:draggable_floating_button/draggable_floating_button.dart';
 
 class ControlsWidget extends StatelessWidget {
   final VoidCallback onClickedPickImage;
@@ -21,19 +22,28 @@ class ControlsWidget extends StatelessWidget {
           RaisedButton(
             onPressed: onClickedPickImage,
             child: Text('Pick Image'),
+            //splashColor: Colors.grey,
+            color: Color(0xFF083386),
+            textColor: Colors.white,
+
+            padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
           ),
           const SizedBox(height: 30, width: 1),
           RaisedButton(
             onPressed: onClickedScanText,
             child: Text('Scan image'),
+            color: Color(0xFF083386),
+            textColor: Colors.white,
           ),
-          const SizedBox(width: 1),
-          RaisedButton(
+          FloatingActionButton.extended(
+            icon: Icon(Icons.clear),
+            label: Text("Clear"),
             onPressed: () {
               gg(context);
               onClickedClear();
             },
-            child: Text('Clear'),
+            backgroundColor: Colors.red,
+            foregroundColor: Colors.white,
           )
         ],
       );

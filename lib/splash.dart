@@ -14,7 +14,7 @@ class MyApps extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: title,
         theme: ThemeData(
-            primarySwatch: Colors.blue, backgroundColor: Colors.black),
+            primaryColor: Color(0xFF083386), backgroundColor: Colors.black),
         home: MyHomePage(),
       );
 }

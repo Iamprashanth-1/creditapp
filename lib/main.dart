@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: title,
         theme: ThemeData(
-            primarySwatch: Colors.blue, backgroundColor: Colors.black),
+            primaryColor: Color(0xFF083386), backgroundColor: Colors.black),
         home: AnimatedSplashScreen(),
       );
 }
@@ -34,10 +34,10 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(
-          title: Text(widget.title),
-          toolbarHeight: 60,
-          centerTitle: true,
-        ),
+            title: Text(widget.title),
+            toolbarHeight: 60,
+            centerTitle: true,
+            backgroundColor: Color(0xFF083386)),
         body: Padding(
           padding: const EdgeInsets.all(8),
           child: Column(
