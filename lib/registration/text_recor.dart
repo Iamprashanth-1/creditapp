@@ -152,7 +152,6 @@ class _TextRecognitionWidgetState extends State<TextRecognitionWidgetr> {
       // scanTexts(text);
       showAlertDialog(context, text);
 
-      print('sai kart');
 
       //var res=await client.get('https://9748e5dd28d6.ngrok.io');
       //print(res.body);

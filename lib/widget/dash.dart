@@ -217,7 +217,7 @@ class _MainPageState extends State<Registration> {
           title: Text(widget.title),
           centerTitle: true,
           backgroundColor: Color(0xFF083386),
-                      leading: Icon(Icons.arrow_right_outlined, color: Colors.blue[900]),
+                      leading: Icon(Icons.arrow_right_outlined, color: Color(0xFF083386)),
 
           toolbarHeight: 60,
           actions: <Widget>[
