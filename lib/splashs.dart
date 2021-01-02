@@ -43,7 +43,7 @@ class _SplashScreenState extends State<SplashScreen> {
             color: Colors.white,
             size: 200,
           ),
-          LinearProgressIndicator()
+          LinearProgressIndicator(backgroundColor:Color(0xFF083386))
         ],
       ),
     );
