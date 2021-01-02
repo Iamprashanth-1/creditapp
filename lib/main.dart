@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
         title: title,
         theme: ThemeData(
             primarySwatch: Colors.blue, backgroundColor: Colors.black),
-        home: MyHomePage(),
+        home: AnimatedSplashScreen(),
       );
 }
 
