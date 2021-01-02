@@ -148,14 +148,57 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       appBar: AppBar(
         title: Text('TVS KYC and Vehicle status check'),
         toolbarHeight: 60,
+
         backgroundColor: Color(0xFF083386),
-                  //  leading: Icon(Icons.arrow_right_outlined, color: Colors.blue[900]),
+        //  leading: Icon(Icons.arrow_right_outlined, color: Colors.blue[900]),
 
         centerTitle: true,
+      ),
+      drawer: Drawer(
+        child: ListView(
+          // Important: Remove any padding from the ListView.
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            UserAccountsDrawerHeader(
+              accountName: Text("Welcome"),
+              accountEmail: Text("abcd@gmail.com"),
+              currentAccountPicture: CircleAvatar(
+                backgroundColor: Colors.orange,
+                child: Text(
+                  "A",
+                  style: TextStyle(fontSize: 40.0),
+                ),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.home),
+              title: Text("Home"),
+              onTap: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => Dash()));
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.settings),
+              title: Text("Settings"),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.contacts),
+              title: Text("Contact Us"),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+          ],
+        ),
       ),
       // body: Center(
       //  child: _widgetOptions.elementAt(_selectedIndex),
       //),
+
       body: CarouselWithIndicatorDemo(),
 
       bottomNavigationBar: BottomNavigationBar(
@@ -217,8 +260,7 @@ class _MainPageState extends State<Registration> {
           title: Text(widget.title),
           centerTitle: true,
           backgroundColor: Color(0xFF083386),
-                      leading: Icon(Icons.arrow_right_outlined, color: Color(0xFF083386)),
-
+          leading: Icon(Icons.arrow_right_outlined, color: Color(0xFF083386)),
           toolbarHeight: 60,
           actions: <Widget>[
             Padding(
