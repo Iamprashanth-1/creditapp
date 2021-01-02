@@ -178,14 +178,8 @@ class _HomePageState extends State<HomePage> {
                               Icon(Icons.directions_car_rounded,
                                   color: Colors.white),
                               SizedBox(height: 10),
-<<<<<<< Updated upstream
                               Text("Vehicle Details",
                                   style: TextStyle(color: Colors.white)),
-=======
-                              Text("Horsepower",
-                                  style: TextStyle(color: Colors.white),
-                                  textAlign: TextAlign.center),
->>>>>>> Stashed changes
                             ],
                           ),
                         ),
@@ -263,14 +257,8 @@ class _HomePageState extends State<HomePage> {
                             children: <Widget>[
                               Icon(Icons.power_rounded, color: Colors.white),
                               SizedBox(height: 10),
-<<<<<<< Updated upstream
                               Text("Horse Power",
                                   style: TextStyle(color: Colors.white)),
-=======
-                              Text("Average Trip Speed",
-                                  style: TextStyle(color: Colors.white),
-                                  textAlign: TextAlign.center),
->>>>>>> Stashed changes
                             ],
                           ),
                         ),
