@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:tvscred/widget/text_recognition_widget.dart';
 import 'dart:async';
-import 'main.dart';
+
 //import './login/login_page.dart';
 import 'log.dart';
 

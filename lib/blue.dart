@@ -6,7 +6,6 @@ import 'package:flutter/services.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bluetooth_serial/flutter_bluetooth_serial.dart';
-import 'package:flutter/services.dart';
 
 class Blue extends StatelessWidget {
   @override

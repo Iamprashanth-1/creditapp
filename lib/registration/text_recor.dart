@@ -2,11 +2,9 @@ import 'dart:io';
 
 import 'package:clipboard/clipboard.dart';
 import 'package:tvscred/api/firebase_ml_api.dart';
-import 'package:tvscred/widget/text_area_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:async';
-import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:merge_images/merge_images.dart';

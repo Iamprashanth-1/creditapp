@@ -31,7 +31,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   void initState() {
-    // TODO: implement initState
+
     Future.delayed(Duration.zero, () {
       _autoConnect(context);
     });

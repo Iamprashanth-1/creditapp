@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import "./text_recognition_widget.dart";
-import 'package:draggable_floating_button/draggable_floating_button.dart';
 
 class ControlsWidget extends StatelessWidget {
   final VoidCallback onClickedPickImage;
