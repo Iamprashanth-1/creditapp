@@ -183,7 +183,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           currentIndex: _selectedIndex,
           // selectedItemColor: Colors.white,//1
           // unselectedItemColor: const Color(0xFF90CAF9),//1
-          selectedItemColor: Colors.blue, //2
+          selectedItemColor: const Color(0xFF253C80), //2
           unselectedItemColor: const Color(0xFF757575), //2
           onTap: _onItemTapped,
           iconSize: 25,
