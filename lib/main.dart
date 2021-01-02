@@ -35,7 +35,7 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(
           title: Text(widget.title),
-          toolbarHeight: 80,
+          toolbarHeight: 60,
           centerTitle: true,
         ),
         body: Padding(

@@ -147,7 +147,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
     return Scaffold(
       appBar: AppBar(
         title: Text('TVS KYC and Vehicle status check'),
-        toolbarHeight: 100,
+        toolbarHeight: 60,
         centerTitle: true,
       ),
       // body: Center(
@@ -157,34 +157,37 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
 
       bottomNavigationBar: BottomNavigationBar(
           //backgroundColor: Colors.blue,
+
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
               icon: Icon(Icons.home),
               label: 'Home',
-              backgroundColor: Colors.blue,
+              // backgroundColor: Colors.blue,//1
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.business),
               label: 'KYC',
-              backgroundColor: Colors.blue,
+              // backgroundColor: Colors.blue,//1
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.people),
               label: 'Registration',
-              backgroundColor: Colors.blue,
+              // backgroundColor: Colors.blue,//1
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.bluetooth_audio),
               label: 'OBD',
-              backgroundColor: Colors.blue,
+              // backgroundColor: Colors.blue,//1
             ),
           ],
           currentIndex: _selectedIndex,
-          selectedItemColor: Colors.amber[800],
-          backgroundColor: Colors.blue,
+          // selectedItemColor: Colors.white,//1
+          // unselectedItemColor: const Color(0xFF90CAF9),//1
+          selectedItemColor: Colors.blue, //2
+          unselectedItemColor: const Color(0xFF757575), //2
           onTap: _onItemTapped,
-          iconSize: 40,
-          elevation: 5),
+          iconSize: 25,
+          elevation: 25.25),
     );
   }
 }
@@ -193,7 +196,6 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
 
 class Registration extends StatefulWidget {
   final String title;
-  
 
   const Registration({
     @required this.title,
@@ -211,9 +213,7 @@ class _MainPageState extends State<Registration> {
         appBar: AppBar(
           title: Text(widget.title),
           centerTitle: true,
-          toolbarHeight:60,
-
-          
+          toolbarHeight: 60,
         ),
         body: Padding(
           padding: const EdgeInsets.all(8),

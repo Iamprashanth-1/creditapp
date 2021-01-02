@@ -1,5 +1,6 @@
+import 'bluetoo.dart';
 import 'home.dart';
-import 'bluetooth.dart';
+// import 'bluetooth.dart';
 import 'shared_pref.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
