@@ -174,9 +174,10 @@ class _HomePageState extends State<HomePage> {
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: <Widget>[
-                              Icon(Icons.power_rounded , color: Colors.white),
+                              Icon(Icons.directions_car_rounded,
+                                  color: Colors.white),
                               SizedBox(height: 10),
-                              Text("Horsepower",
+                              Text("Vehicle Details",
                                   style: TextStyle(color: Colors.white)),
                             ],
                           ),
@@ -251,9 +252,9 @@ class _HomePageState extends State<HomePage> {
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: <Widget>[
-                              Icon(Icons.directions_car_rounded, color: Colors.white),
+                              Icon(Icons.power_rounded, color: Colors.white),
                               SizedBox(height: 10),
-                              Text("Vehicle Details",
+                              Text("Horse Power",
                                   style: TextStyle(color: Colors.white)),
                             ],
                           ),
