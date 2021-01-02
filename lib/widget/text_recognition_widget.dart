@@ -33,6 +33,7 @@ class _TextRecognitionWidgetState extends State<TextRecognitionWidget> {
   @override
   Widget build(BuildContext context) => Expanded(
         child: Column(
+          // width:MediaQuery.of(context).size.width,
           children: [
             Expanded(child: buildImage()),
             const SizedBox(height: 168),
@@ -59,7 +60,7 @@ class _TextRecognitionWidgetState extends State<TextRecognitionWidget> {
         context: context,
         builder: (BuildContext context) {
           return AlertDialog(
-              title: Text("From where do you want to take the photo?"),
+              title: Text("Take Image From "),
               content: SingleChildScrollView(
                 child: ListBody(
                   children: <Widget>[

@@ -87,7 +87,7 @@ class _TextRecognitionWidgetState extends State<TextRecognitionWidgetr> {
         context: context,
         builder: (BuildContext context) {
           return AlertDialog(
-              title: Text("From where do you want to take the photo?"),
+              title: Text("Take Image From "),
               content: SingleChildScrollView(
                 child: ListBody(
                   children: <Widget>[
@@ -151,7 +151,6 @@ class _TextRecognitionWidgetState extends State<TextRecognitionWidgetr> {
       //_onAlertButtonsPressed(context);
       // scanTexts(text);
       showAlertDialog(context, text);
-
 
       //var res=await client.get('https://9748e5dd28d6.ngrok.io');
       //print(res.body);

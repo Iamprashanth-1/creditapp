@@ -15,8 +15,8 @@ class ControlsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          const SizedBox(width: 0.1),
+        children: <Widget>[
+          // const SizedBox(width: 0.1),
           RaisedButton(
             onPressed: onClickedPickImage,
             child: Text('Pick Image'),
@@ -26,13 +26,23 @@ class ControlsWidget extends StatelessWidget {
 
             padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
           ),
-          const SizedBox(height: 30, width: 1),
+          // const SizedBox(height: 30, width: 1),
           RaisedButton(
             onPressed: onClickedScanText,
             child: Text('Scan image'),
             color: Color(0xFF083386),
             textColor: Colors.white,
           ),
+          // new MaterialButton(
+          //   height: 40.0,
+          //   minWidth: double.infinity,
+          //   color: Theme.of(context).primaryColor,
+          //   textColor: Colors.white,
+          //   child: new Text("push"),
+          //   onPressed: () => {},
+          //   // splashColor: Colors.redAccent,
+          // ),
+          
           FloatingActionButton.extended(
             icon: Icon(Icons.clear),
             label: Text("Clear"),
@@ -40,6 +50,7 @@ class ControlsWidget extends StatelessWidget {
               gg(context);
               onClickedClear();
             },
+            
             backgroundColor: Colors.red,
             foregroundColor: Colors.white,
           )
