@@ -5,19 +5,17 @@ class ControlsWidget extends StatelessWidget {
   final VoidCallback onClickedPickImage;
   final VoidCallback onClickedScanText;
   final VoidCallback onClickedClear;
-  final VoidCallback onClickedcam;
 
   const ControlsWidget({
     @required this.onClickedPickImage,
     @required this.onClickedScanText,
     @required this.onClickedClear,
-    @required this.onClickedcam,
     Key key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) => Row(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           const SizedBox(width: 0.1),
           RaisedButton(
@@ -28,11 +26,6 @@ class ControlsWidget extends StatelessWidget {
           RaisedButton(
             onPressed: onClickedScanText,
             child: Text('Scan image'),
-          ),
-          const SizedBox(width: 0.1),
-          RaisedButton(
-            onPressed: onClickedcam,
-            child: Text('Camera'),
           ),
           const SizedBox(width: 1),
           RaisedButton(

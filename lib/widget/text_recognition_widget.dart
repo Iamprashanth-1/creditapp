@@ -93,9 +93,9 @@ class _TextRecognitionWidgetState extends State<TextRecognitionWidget> {
   }
 
   Future cam() async {
-    final file = await ImagePicker().getImage(source: ImageSource.gallery);
+    final file = await ImagePicker().getImage(source: ImageSource.camera);
     setImage(File(file.path));
-    Navigator.of(context, rootNavigator: true).pop('dialog');
+    Navigator.of(context, rootNavigator: true).pop();
   }
 
   Future cropImage(File image) async {

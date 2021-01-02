@@ -15,7 +15,7 @@ class ControlsWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Row(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           const SizedBox(width: 0.1),
           RaisedButton(

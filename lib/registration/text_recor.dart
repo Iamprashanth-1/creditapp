@@ -42,12 +42,12 @@ class _TextRecognitionWidgetState extends State<TextRecognitionWidgetr> {
             Expanded(child: buildImage()),
             const SizedBox(height: 10),
             ControlsWidget(
-              onClickedPickImage: pickImage,
+              onClickedPickImage: showSelectionDial,
               onClickedScanText: scanText,
               onClickedClear: () {
                 clear(context);
               },
-              onClickedcam: cam,
+              //onClickedcam: cam,
             ),
           ],
         ),
@@ -61,9 +61,10 @@ class _TextRecognitionWidgetState extends State<TextRecognitionWidgetr> {
 
   Future pickImage() async {
     final file = await ImagePicker().getImage(source: ImageSource.gallery);
+    final file1 = await ImagePicker().getImage(source: ImageSource.gallery);
+
     ui.Image image1 =
         await ImagesMergeHelper.loadImageFromFile(File(file.path));
-    final file1 = await ImagePicker().getImage(source: ImageSource.gallery);
     ui.Image image2 =
         await ImagesMergeHelper.loadImageFromFile(File(file1.path));
 
@@ -80,6 +81,35 @@ class _TextRecognitionWidgetState extends State<TextRecognitionWidgetr> {
     File file3 = await ImagesMergeHelper.imageToFile(image);
     //print(file);
     setImage(file3);
+    Navigator.of(context, rootNavigator: true).pop();
+  }
+
+  Future showSelectionDial() {
+    return showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+              title: Text("From where do you want to take the photo?"),
+              content: SingleChildScrollView(
+                child: ListBody(
+                  children: <Widget>[
+                    GestureDetector(
+                      child: Text("Gallery"),
+                      onTap: () {
+                        pickImage();
+                      },
+                    ),
+                    Padding(padding: EdgeInsets.all(8.0)),
+                    GestureDetector(
+                      child: Text("Camera"),
+                      onTap: () {
+                        cam();
+                      },
+                    )
+                  ],
+                ),
+              ));
+        });
   }
 
   Future cam() async {
@@ -102,6 +132,7 @@ class _TextRecognitionWidgetState extends State<TextRecognitionWidgetr> {
         backgroundColor: Colors.black26);
     File file5 = await ImagesMergeHelper.imageToFile(image0);
     setImage(file5);
+    Navigator.of(context, rootNavigator: true).pop();
   }
 
   Future scanText() async {
