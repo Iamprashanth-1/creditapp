@@ -90,7 +90,7 @@ class Logg extends StatelessWidget {
             backgroundColor: Colors.white,
             color: Color(0xFF083386),
           ),
-          labelStyle: TextStyle(fontSize: 22, color: Colors.white),
+          labelStyle: TextStyle(fontSize: 18, color: Colors.white),
           enabledBorder: UnderlineInputBorder(
             borderSide: BorderSide(color: Colors.blue.shade700, width: 4),
             borderRadius: inputBorder,
