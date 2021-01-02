@@ -1,5 +1,5 @@
 import 'dart:io';
-
+import 'package:image_cropper/image_cropper.dart';
 import 'package:clipboard/clipboard.dart';
 import 'package:tvscred/api/firebase_ml_api.dart';
 import 'package:tvscred/widget/text_area_widget.dart';
@@ -16,7 +16,7 @@ import 'package:status_alert/status_alert.dart';
 
 //import 'package:cool_alert/cool_alert.dart';
 
-//import 'package:camera/camera.dart';
+import 'package:camera/camera.dart';
 
 import 'controls_widget.dart';
 
@@ -41,12 +41,12 @@ class _TextRecognitionWidgetState extends State<TextRecognitionWidget> {
             Expanded(child: buildImage()),
             const SizedBox(height: 168),
             ControlsWidget(
-              onClickedPickImage: pickImage,
+              onClickedPickImage: showSelectionDial,
               onClickedScanText: scanText,
               onClickedClear: () {
                 clear(context);
               },
-              onClickedcam: cam,
+              //onClickedcam: cam,
             ),
           ],
         ),
@@ -58,14 +58,54 @@ class _TextRecognitionWidgetState extends State<TextRecognitionWidget> {
             : Icon(Icons.photo, size: 40, color: Colors.black),
       );
 
+  Future showSelectionDial() {
+    return showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+              title: Text("From where do you want to take the photo?"),
+              content: SingleChildScrollView(
+                child: ListBody(
+                  children: <Widget>[
+                    GestureDetector(
+                      child: Text("Gallery"),
+                      onTap: () {
+                        pickImage();
+                      },
+                    ),
+                    Padding(padding: EdgeInsets.all(8.0)),
+                    GestureDetector(
+                      child: Text("Camera"),
+                      onTap: () {
+                        cam();
+                      },
+                    )
+                  ],
+                ),
+              ));
+        });
+  }
+
   Future pickImage() async {
-    final file = await ImagePicker().getImage(source: ImageSource.gallery);
-    setImage(File(file.path));
+    final fil = await ImagePicker().getImage(source: ImageSource.gallery);
+    setImage(File(fil.path));
+    Navigator.of(context, rootNavigator: true).pop();
   }
 
   Future cam() async {
-    final files = await ImagePicker().getImage(source: ImageSource.camera);
-    setImage(File(files.path));
+    final file = await ImagePicker().getImage(source: ImageSource.gallery);
+    setImage(File(file.path));
+    Navigator.of(context, rootNavigator: true).pop('dialog');
+  }
+
+  Future cropImage(File image) async {
+    File croppedFile = await ImageCropper.cropImage(
+      sourcePath: image.path,
+      //ratioX: 1.0,
+      //ratioY: 1.0,
+      maxWidth: 512,
+      maxHeight: 512,
+    );
   }
 
   Future scanTe() {
@@ -85,33 +125,33 @@ class _TextRecognitionWidgetState extends State<TextRecognitionWidget> {
       ),
     );
     //var client = new http.Client();
-    if(image==null){
+    if (image == null) {
       dfkk('Please select image');
       Navigator.of(context, rootNavigator: true).pop('dialog');
+    } else {
+      final text = await FirebaseMLApi.recogniseText(image);
+      setText(text);
 
+      //_onAlertButtonsPressed(context);
+      // scanTexts(text);
+      showAlertDialog(context, text);
+
+      print('sai kart');
+
+      //var res=await client.get('https://9748e5dd28d6.ngrok.io');
+      //print(res.body);
+
+      // Navigator.of(context).pop();
     }
-    else{
-    final text = await FirebaseMLApi.recogniseText(image);
-    setText(text);
-
-    //_onAlertButtonsPressed(context);
-    // scanTexts(text);
-    showAlertDialog(context, text);
-
-    print('sai kart');
-
-    //var res=await client.get('https://9748e5dd28d6.ngrok.io');
-    //print(res.body);
-
-    // Navigator.of(context).pop();
   }
-  }
+
   void dfkk(String sss) {
     StatusAlert.show(context,
         duration: Duration(seconds: 2),
         title: sss,
         configuration: IconConfiguration(icon: Icons.error));
   }
+
   Future scanTexts(String tex) async {
     //final String tex = '';
     showDialog(
@@ -137,7 +177,7 @@ class _TextRecognitionWidgetState extends State<TextRecognitionWidget> {
     Widget rescan = FlatButton(
       child: Text("rescan"),
       onPressed: () {
-       Navigator.of(context, rootNavigator: true).pop();
+        Navigator.of(context, rootNavigator: true).pop();
         Navigator.pushReplacement(
             context,
             MaterialPageRoute(
@@ -211,11 +251,9 @@ class _TextRecognitionWidgetState extends State<TextRecognitionWidget> {
       //showAlertDialog(context);
       dfss(" Verification Success");
       Navigator.of(context, rootNavigator: true).pop();
-
     } else {
       dfs("failed");
       Navigator.of(context, rootNavigator: true).pop();
-
     }
   }
 
