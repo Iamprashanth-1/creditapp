@@ -40,10 +40,10 @@ class _SplashScreenState extends State<SplashScreen> {
         children: <Widget>[
           Icon(
             Icons.bluetooth,
-            color: Colors.white,
+            color: Color(0xFF083386),
             size: 200,
           ),
-          LinearProgressIndicator(backgroundColor:Color(0xFF083386))
+          LinearProgressIndicator(backgroundColor: Colors.blue[200])
         ],
       ),
     );

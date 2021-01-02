@@ -154,9 +154,10 @@ class _HomePageState extends State<HomePage> {
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: <Widget>[
-                              Icon(Icons.developer_board),
+                              Icon(Icons.speed_sharp, color: Colors.white),
                               SizedBox(height: 10),
-                              Text("Experiences",),
+                              Text("Speed",
+                                  style: TextStyle(color: Colors.white)),
                             ],
                           ),
                         ),
@@ -173,9 +174,10 @@ class _HomePageState extends State<HomePage> {
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: <Widget>[
-                              Icon(Icons.event),
+                              Icon(Icons.event, color: Colors.white),
                               SizedBox(height: 10),
-                              Text("Events"),
+                              Text("Horsepower",
+                                  style: TextStyle(color: Colors.white)),
                             ],
                           ),
                         ),
@@ -199,9 +201,10 @@ class _HomePageState extends State<HomePage> {
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: <Widget>[
-                              Icon(Icons.developer_board),
+                              Icon(Icons.developer_board, color: Colors.white),
                               SizedBox(height: 10),
-                              Text("Experience"),
+                              Text("Air Fuel Ratio",
+                                  style: TextStyle(color: Colors.white)),
                             ],
                           ),
                         ),
@@ -218,9 +221,10 @@ class _HomePageState extends State<HomePage> {
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: <Widget>[
-                              Icon(Icons.event),
+                              Icon(Icons.event, color: Colors.white),
                               SizedBox(height: 10),
-                              Text("Events"),
+                              Text("Ambient Air Temperature",
+                                  style: TextStyle(color: Colors.white)),
                             ],
                           ),
                         ),
@@ -246,9 +250,10 @@ class _HomePageState extends State<HomePage> {
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: <Widget>[
-                              Icon(Icons.developer_board),
+                              Icon(Icons.developer_board, color: Colors.white),
                               SizedBox(height: 10),
-                              Text("Experiences"),
+                              Text("Average Trip Speed",
+                                  style: TextStyle(color: Colors.white)),
                             ],
                           ),
                         ),
@@ -265,9 +270,10 @@ class _HomePageState extends State<HomePage> {
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: <Widget>[
-                              Icon(Icons.event),
+                              Icon(Icons.event, color: Colors.white),
                               SizedBox(height: 10),
-                              Text("Events"),
+                              Text("Barometer",
+                                  style: TextStyle(color: Colors.white)),
                             ],
                           ),
                         ),
@@ -291,9 +297,10 @@ class _HomePageState extends State<HomePage> {
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: <Widget>[
-                              Icon(Icons.developer_board),
+                              Icon(Icons.developer_board, color: Colors.white),
                               SizedBox(height: 10),
-                              Text("Experiences"),
+                              Text("Barometric Pressure",
+                                  style: TextStyle(color: Colors.white)),
                             ],
                           ),
                         ),
@@ -310,9 +317,10 @@ class _HomePageState extends State<HomePage> {
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: <Widget>[
-                              Icon(Icons.event),
+                              Icon(Icons.event, color: Colors.white),
                               SizedBox(height: 10),
-                              Text("Events"),
+                              Text("Catalys Temperature",
+                                  style: TextStyle(color: Colors.white)),
                             ],
                           ),
                         ),
@@ -336,9 +344,10 @@ class _HomePageState extends State<HomePage> {
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: <Widget>[
-                              Icon(Icons.developer_board),
+                              Icon(Icons.developer_board, color: Colors.white),
                               SizedBox(height: 10),
-                              Text("Experiences"),
+                              Text("Command Equivalence Ratio",
+                                  style: TextStyle(color: Colors.white)),
                             ],
                           ),
                         ),
@@ -355,9 +364,527 @@ class _HomePageState extends State<HomePage> {
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: <Widget>[
-                              Icon(Icons.event),
+                              Icon(Icons.event, color: Colors.white),
                               SizedBox(height: 10),
-                              Text("Events"),
+                              Text("Cost Per Mile",
+                                  style: TextStyle(color: Colors.white)),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                  child: Row(
+                    children: <Widget>[
+                      Expanded(
+                        child: RaisedButton(
+                          onPressed: () {},
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10)),
+                          elevation: 1.5,
+                          color: Color(0xFF083386),
+                          padding: const EdgeInsets.all(16),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              Icon(Icons.developer_board, color: Colors.white),
+                              SizedBox(height: 10),
+                              Text("Command Equivalence Ratio",
+                                  style: TextStyle(color: Colors.white)),
+                            ],
+                          ),
+                        ),
+                      ),
+                      SizedBox(width: 24, height: 10),
+                      Expanded(
+                        child: RaisedButton(
+                          onPressed: () {},
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10)),
+                          elevation: 1.5,
+                          color: Color(0xFF083386),
+                          padding: const EdgeInsets.all(16),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              Icon(Icons.event, color: Colors.white),
+                              SizedBox(height: 10),
+                              Text("Cost Per Mile",
+                                  style: TextStyle(color: Colors.white)),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                  child: Row(
+                    children: <Widget>[
+                      Expanded(
+                        child: RaisedButton(
+                          onPressed: () {},
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10)),
+                          elevation: 1.5,
+                          color: Color(0xFF083386),
+                          padding: const EdgeInsets.all(16),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              Icon(Icons.developer_board, color: Colors.white),
+                              SizedBox(height: 10),
+                              Text("CO2 Emissions",
+                                  style: TextStyle(color: Colors.white)),
+                            ],
+                          ),
+                        ),
+                      ),
+                      SizedBox(width: 24, height: 10),
+                      Expanded(
+                        child: RaisedButton(
+                          onPressed: () {},
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10)),
+                          elevation: 1.5,
+                          color: Color(0xFF083386),
+                          padding: const EdgeInsets.all(16),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              Icon(Icons.event, color: Colors.white),
+                              SizedBox(height: 10),
+                              Text("Distance to Empty Fuel Tank",
+                                  style: TextStyle(color: Colors.white)),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                  child: Row(
+                    children: <Widget>[
+                      Expanded(
+                        child: RaisedButton(
+                          onPressed: () {},
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10)),
+                          elevation: 1.5,
+                          color: Color(0xFF083386),
+                          padding: const EdgeInsets.all(16),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              Icon(Icons.developer_board, color: Colors.white),
+                              SizedBox(height: 10),
+                              Text("Distance Traveled",
+                                  style: TextStyle(color: Colors.white)),
+                            ],
+                          ),
+                        ),
+                      ),
+                      SizedBox(width: 24, height: 10),
+                      Expanded(
+                        child: RaisedButton(
+                          onPressed: () {},
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10)),
+                          elevation: 1.5,
+                          color: Color(0xFF083386),
+                          padding: const EdgeInsets.all(16),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              Icon(Icons.event, color: Colors.white),
+                              SizedBox(height: 10),
+                              Text("EGR Commanded",
+                                  style: TextStyle(color: Colors.white)),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                  child: Row(
+                    children: <Widget>[
+                      Expanded(
+                        child: RaisedButton(
+                          onPressed: () {},
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10)),
+                          elevation: 1.5,
+                          color: Color(0xFF083386),
+                          padding: const EdgeInsets.all(16),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              Icon(Icons.developer_board, color: Colors.white),
+                              SizedBox(height: 10),
+                              Text("EGR Error",
+                                  style: TextStyle(color: Colors.white)),
+                            ],
+                          ),
+                        ),
+                      ),
+                      SizedBox(width: 24, height: 10),
+                      Expanded(
+                        child: RaisedButton(
+                          onPressed: () {},
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10)),
+                          elevation: 1.5,
+                          color: Color(0xFF083386),
+                          padding: const EdgeInsets.all(16),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              Icon(Icons.event, color: Colors.white),
+                              SizedBox(height: 10),
+                              Text("Engine Coolant Temperature",
+                                  style: TextStyle(color: Colors.white)),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                  child: Row(
+                    children: <Widget>[
+                      Expanded(
+                        child: RaisedButton(
+                          onPressed: () {},
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10)),
+                          elevation: 1.5,
+                          color: Color(0xFF083386),
+                          padding: const EdgeInsets.all(16),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              Icon(Icons.developer_board, color: Colors.white),
+                              SizedBox(height: 10),
+                              Text("Engine kW",
+                                  style: TextStyle(color: Colors.white)),
+                            ],
+                          ),
+                        ),
+                      ),
+                      SizedBox(width: 24, height: 10),
+                      Expanded(
+                        child: RaisedButton(
+                          onPressed: () {},
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10)),
+                          elevation: 1.5,
+                          color: Color(0xFF083386),
+                          padding: const EdgeInsets.all(16),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              Icon(Icons.event, color: Colors.white),
+                              SizedBox(height: 10),
+                              Text("Engine Load",
+                                  style: TextStyle(color: Colors.white)),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                  child: Row(
+                    children: <Widget>[
+                      Expanded(
+                        child: RaisedButton(
+                          onPressed: () {},
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10)),
+                          elevation: 1.5,
+                          color: Color(0xFF083386),
+                          padding: const EdgeInsets.all(16),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              Icon(Icons.developer_board, color: Colors.white),
+                              SizedBox(height: 10),
+                              Text("Engine Oil Temperature",
+                                  style: TextStyle(color: Colors.white)),
+                            ],
+                          ),
+                        ),
+                      ),
+                      SizedBox(width: 24, height: 10),
+                      Expanded(
+                        child: RaisedButton(
+                          onPressed: () {},
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10)),
+                          elevation: 1.5,
+                          color: Color(0xFF083386),
+                          padding: const EdgeInsets.all(16),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              Icon(Icons.event, color: Colors.white),
+                              SizedBox(height: 10),
+                              Text("Engine RPM",
+                                  style: TextStyle(color: Colors.white)),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                  child: Row(
+                    children: <Widget>[
+                      Expanded(
+                        child: RaisedButton(
+                          onPressed: () {},
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10)),
+                          elevation: 1.5,
+                          color: Color(0xFF083386),
+                          padding: const EdgeInsets.all(16),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              Icon(Icons.developer_board, color: Colors.white),
+                              SizedBox(height: 10),
+                              Text("Ethanol Fuel Percentage",
+                                  style: TextStyle(color: Colors.white)),
+                            ],
+                          ),
+                        ),
+                      ),
+                      SizedBox(width: 24, height: 10),
+                      Expanded(
+                        child: RaisedButton(
+                          onPressed: () {},
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10)),
+                          elevation: 1.5,
+                          color: Color(0xFF083386),
+                          padding: const EdgeInsets.all(16),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              Icon(Icons.event, color: Colors.white),
+                              SizedBox(height: 10),
+                              Text("Evap System Vapour Pressure",
+                                  style: TextStyle(color: Colors.white)),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                  child: Row(
+                    children: <Widget>[
+                      Expanded(
+                        child: RaisedButton(
+                          onPressed: () {},
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10)),
+                          elevation: 1.5,
+                          color: Color(0xFF083386),
+                          padding: const EdgeInsets.all(16),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              Icon(Icons.developer_board, color: Colors.white),
+                              SizedBox(height: 10),
+                              Text("Exhaust Gas Temperature",
+                                  style: TextStyle(color: Colors.white)),
+                            ],
+                          ),
+                        ),
+                      ),
+                      SizedBox(width: 24, height: 10),
+                      Expanded(
+                        child: RaisedButton(
+                          onPressed: () {},
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10)),
+                          elevation: 1.5,
+                          color: Color(0xFF083386),
+                          padding: const EdgeInsets.all(16),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              Icon(Icons.event, color: Colors.white),
+                              SizedBox(height: 10),
+                              Text("Fuel Cost",
+                                  style: TextStyle(color: Colors.white)),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                  child: Row(
+                    children: <Widget>[
+                      Expanded(
+                        child: RaisedButton(
+                          onPressed: () {},
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10)),
+                          elevation: 1.5,
+                          color: Color(0xFF083386),
+                          padding: const EdgeInsets.all(16),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              Icon(Icons.developer_board, color: Colors.white),
+                              SizedBox(height: 10),
+                              Text("Fuel Flow Rate",
+                                  style: TextStyle(color: Colors.white)),
+                            ],
+                          ),
+                        ),
+                      ),
+                      SizedBox(width: 24, height: 10),
+                      Expanded(
+                        child: RaisedButton(
+                          onPressed: () {},
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10)),
+                          elevation: 1.5,
+                          color: Color(0xFF083386),
+                          padding: const EdgeInsets.all(16),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              Icon(Icons.event, color: Colors.white),
+                              SizedBox(height: 10),
+                              Text("Fuel Level",
+                                  style: TextStyle(color: Colors.white)),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                  child: Row(
+                    children: <Widget>[
+                      Expanded(
+                        child: RaisedButton(
+                          onPressed: () {},
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10)),
+                          elevation: 1.5,
+                          color: Color(0xFF083386),
+                          padding: const EdgeInsets.all(16),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              Icon(Icons.developer_board, color: Colors.white),
+                              SizedBox(height: 10),
+                              Text("Fuel Pressure",
+                                  style: TextStyle(color: Colors.white)),
+                            ],
+                          ),
+                        ),
+                      ),
+                      SizedBox(width: 24, height: 10),
+                      Expanded(
+                        child: RaisedButton(
+                          onPressed: () {},
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10)),
+                          elevation: 1.5,
+                          color: Color(0xFF083386),
+                          padding: const EdgeInsets.all(16),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              Icon(Icons.event, color: Colors.white),
+                              SizedBox(height: 10),
+                              Text("Fuel Rail Pressure",
+                                  style: TextStyle(color: Colors.white)),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                  child: Row(
+                    children: <Widget>[
+                      Expanded(
+                        child: RaisedButton(
+                          onPressed: () {},
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10)),
+                          elevation: 1.5,
+                          color: Color(0xFF083386),
+                          padding: const EdgeInsets.all(16),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              Icon(Icons.developer_board, color: Colors.white),
+                              SizedBox(height: 10),
+                              Text("Fuel Trim Bank",
+                                  style: TextStyle(color: Colors.white)),
+                            ],
+                          ),
+                        ),
+                      ),
+                      SizedBox(width: 24, height: 10),
+                      Expanded(
+                        child: RaisedButton(
+                          onPressed: () {},
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10)),
+                          elevation: 1.5,
+                          color: Color(0xFF083386),
+                          padding: const EdgeInsets.all(16),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              Icon(Icons.event, color: Colors.white),
+                              SizedBox(height: 10),
+                              Text("Cost Per Mile",
+                                  style: TextStyle(color: Colors.white)),
                             ],
                           ),
                         ),
