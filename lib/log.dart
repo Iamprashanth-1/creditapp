@@ -68,7 +68,7 @@ class Logg extends StatelessWidget {
         ),
         textFieldStyle: TextStyle(
           color: Colors.white,
-          fontSize: 22,
+          fontSize: 18,
           shadows: [Shadow(color: Colors.white, blurRadius: 0)],
         ),
         buttonStyle: TextStyle(
@@ -90,11 +90,7 @@ class Logg extends StatelessWidget {
             backgroundColor: Colors.white,
             color: Color(0xFF083386),
           ),
-<<<<<<< HEAD
-          // labelStyle: TextStyle(fontSize: 16, color: Colors.white),
-=======
-          labelStyle: TextStyle(fontSize: 18, color: Colors.white),
->>>>>>> 6accd7e7bb1d7f2755eb086efe23aa11ff1e4f44
+          labelStyle: TextStyle(fontSize: 18, color: Colors.white54),
           enabledBorder: UnderlineInputBorder(
             borderSide: BorderSide(color: Colors.blue.shade700, width: 4),
             borderRadius: inputBorder,
