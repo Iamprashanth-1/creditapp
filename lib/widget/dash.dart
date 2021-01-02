@@ -150,6 +150,8 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         title: Text('TVS KYC and Vehicle status check'),
         toolbarHeight: 60,
         backgroundColor: Color(0xFF083386),
+                  //  leading: Icon(Icons.arrow_right_outlined, color: Colors.blue[900]),
+
         centerTitle: true,
       ),
       // body: Center(
@@ -216,6 +218,8 @@ class _MainPageState extends State<Registration> {
           title: Text(widget.title),
           centerTitle: true,
           backgroundColor: Color(0xFF083386),
+                      leading: Icon(Icons.arrow_right_outlined, color: Colors.blue[900]),
+
           toolbarHeight: 60,
           actions: <Widget>[
             Padding(

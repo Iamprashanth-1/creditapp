@@ -37,6 +37,7 @@ class _MainPageState extends State<MainPage> {
         appBar: AppBar(
             title: Text(widget.title),
             toolbarHeight: 60,
+            leading: Icon(Icons.arrow_right_outlined, color: Colors.blue[900]),
             actions: <Widget>[
               Padding(
                   padding: EdgeInsets.only(right: 20, top: 20),
