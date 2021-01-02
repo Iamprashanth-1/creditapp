@@ -3,6 +3,7 @@ import 'package:flutter_bluetooth_serial/flutter_bluetooth_serial.dart';
 import 'package:provider/provider.dart';
 import 'bluetoo.dart';
 import 'shared_pref.dart';
+import './widget/dash.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -44,7 +45,22 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        leading: Icon(Icons.bluetooth),
+        actions: <Widget>[
+          Padding(
+              padding: EdgeInsets.only(right: 20, top: 20),
+              child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => Dash()));
+                  },
+                  child: Text(
+                    "Back",
+                    style: TextStyle(
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ))),
+        ],
         title: Text("OBD Status checks"),
       ),
       body: RefreshIndicator(

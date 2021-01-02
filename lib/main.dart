@@ -1,6 +1,7 @@
 import 'package:tvscred/widget/text_recognition_widget.dart';
 import 'package:flutter/material.dart';
 import 'splash.dart';
+import './widget/dash.dart';
 
 void main() => runApp(MyApp());
 
@@ -36,6 +37,22 @@ class _MainPageState extends State<MainPage> {
         appBar: AppBar(
             title: Text(widget.title),
             toolbarHeight: 60,
+            actions: <Widget>[
+              Padding(
+                  padding: EdgeInsets.only(right: 20, top: 20),
+                  child: GestureDetector(
+                      onTap: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => Dash()));
+                      },
+                      child: Text(
+                        "Back",
+                        style: TextStyle(
+                          fontSize: 20.0,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ))),
+            ],
             centerTitle: true,
             backgroundColor: Color(0xFF083386)),
         body: Padding(
