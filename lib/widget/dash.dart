@@ -217,6 +217,22 @@ class _MainPageState extends State<Registration> {
           centerTitle: true,
           backgroundColor: Color(0xFF083386),
           toolbarHeight: 60,
+          actions: <Widget>[
+            Padding(
+                padding: EdgeInsets.only(right: 20, top: 20),
+                child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => Dash()));
+                    },
+                    child: Text(
+                      "Back",
+                      style: TextStyle(
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ))),
+          ],
         ),
         body: Padding(
           padding: const EdgeInsets.all(8),
