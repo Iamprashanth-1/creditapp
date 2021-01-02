@@ -179,12 +179,9 @@ class _HomePageState extends State<HomePage> {
                                   color: Colors.white),
                               SizedBox(height: 10),
                               Text("Vehicle Details",
-<<<<<<< HEAD
+
                                   style: TextStyle(color: Colors.white),
                                   textAlign: TextAlign.center),
-=======
-                                  style: TextStyle(color: Colors.white)),
->>>>>>> c89e0d93893eb066cc646e2c12ad9a0530503306
                             ],
                           ),
                         ),
@@ -263,12 +260,9 @@ class _HomePageState extends State<HomePage> {
                               Icon(Icons.power_rounded, color: Colors.white),
                               SizedBox(height: 10),
                               Text("Horse Power",
-<<<<<<< HEAD
+
                                   style: TextStyle(color: Colors.white),
                                   textAlign: TextAlign.center),
-=======
-                                  style: TextStyle(color: Colors.white)),
->>>>>>> c89e0d93893eb066cc646e2c12ad9a0530503306
                             ],
                           ),
                         ),
