@@ -174,7 +174,7 @@ class _HomePageState extends State<HomePage> {
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: <Widget>[
-                              Icon(Icons.event, color: Colors.white),
+                              Icon(Icons.power_rounded , color: Colors.white),
                               SizedBox(height: 10),
                               Text("Horsepower",
                                   style: TextStyle(color: Colors.white)),
@@ -221,7 +221,8 @@ class _HomePageState extends State<HomePage> {
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: <Widget>[
-                              Icon(Icons.event, color: Colors.white),
+                              Icon(Icons.device_thermostat,
+                                  color: Colors.white),
                               SizedBox(height: 10),
                               Text("Ambient Air Temperature",
                                   style: TextStyle(color: Colors.white)),
@@ -250,9 +251,9 @@ class _HomePageState extends State<HomePage> {
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: <Widget>[
-                              Icon(Icons.developer_board, color: Colors.white),
+                              Icon(Icons.directions_car_rounded, color: Colors.white),
                               SizedBox(height: 10),
-                              Text("Average Trip Speed",
+                              Text("Vehicle Details",
                                   style: TextStyle(color: Colors.white)),
                             ],
                           ),

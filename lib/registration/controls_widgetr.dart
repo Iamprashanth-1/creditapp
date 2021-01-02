@@ -48,6 +48,6 @@ class ControlsWidget extends StatelessWidget {
 }
 
 void gg(BuildContext context) {
-  final snackBar = SnackBar(content: Text('Yay! You have cleared!'));
+  final snackBar = SnackBar(content: Text('Cleared Image List'));
   Scaffold.of(context).showSnackBar(snackBar);
 }
