@@ -7,6 +7,7 @@ const users = const {
   'hunter@gmail.com': 'hunter',
   'abcd@gmail.com': '12345',
   'mpr5045@gmail.com': 'mpr5045',
+  "new@new.com": "00000"
 };
 
 class Logg extends StatelessWidget {
