@@ -123,12 +123,13 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       Navigator.push(
           context,
           MaterialPageRoute(
-              builder: (context) => MainPage(title: "KYC Verification")));
+              builder: (context) => MainPage(title: "KYC ")));
     } else if (_selectedIndex == 2) {
       Navigator.push(
           context,
           MaterialPageRoute(
-              builder: (context) => Registration(title: "Registration Page")));
+              builder: (context) =>
+                  Registration(title: "Vehicle Registration")));
     } else if (_selectedIndex == 3) {
       Navigator.push(
           context, MaterialPageRoute(builder: (context) => SplashScreen()));
@@ -147,7 +148,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
     ]);
     return Scaffold(
       appBar: AppBar(
-        title: Text('TVS KYC and Vehicle status check'),
+        title: Text('Home'),
         toolbarHeight: 60,
 
         backgroundColor: Color(0xFF083386),

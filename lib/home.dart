@@ -62,7 +62,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ))),
         ],
-        title: Text("OBD Status checks"),
+        title: Text("OBD Status check"),
       ),
       body: RefreshIndicator(
           // ignore: missing_return
@@ -349,7 +349,7 @@ class _HomePageState extends State<HomePage> {
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: <Widget>[
-                              Icon(Icons.event, color: Colors.white),
+                              Icon(Icons.device_thermostat, color: Colors.white),
                               SizedBox(height: 10),
                               Text("Catalys Temperature",
                                   style: TextStyle(color: Colors.white),
