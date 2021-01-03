@@ -1,15 +1,10 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import '.././main.dart';
 import '../registration/text_recor.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import '../splashs.dart';
 import '../log.dart';
-import 'package:http/http.dart' as http;
-import 'package:webview_flutter/webview_flutter.dart';
-import 'list_item.dart';
-import 'news.dart';
+// import 'package:webview_flutter/webview_flutter.dart';
 
 //void main() => runApp(MyApp());
 final List<String> imgList = [
@@ -60,17 +55,28 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
   final List<int> colorCodes = <int>[600, 500, 100];
 
   List<News> news = [
-    News(
-        title: 'title',
-        content: 'conten2t',
-        description: 'des',
-        path:
-            'https://news.google.com/articles/CAIiEJS8aLG1fl-DjABPRy7LTakqFAgEKgwIACoFCAowhgIwkDgw0O8B?hl=en-IN&gl=IN&ceid=IN%3Aen',
+    new News(
+        title: 'Benefits of Biking',
+        content: '10 Points That Prove Biking Is A Form Of Therapy',
+        description: '10 Points That Prove Biking Is A Form Of Therapy',
+        // path:
+        // 'https://news.google.com/articles/CAIiEJS8aLG1fl-DjABPRy7LTakqFAgEKgwIACoFCAowhgIwkDgw0O8B?hl=en-IN&gl=IN&ceid=IN%3Aen',
         imagePath:
-            'https://news.google.com/articles/CBMilgFodHRwczovL3d3dy50aGVoaW5kdS5jb20vc2NpLXRlY2gvaGVhbHRoL2Nvcm9uYXZpcnVzLWNlbnRyYWwtZHJ1Z3MtYXV0aG9yaXR5LXBhbmVsLXJlY29tbWVuZHMtYXBwcm92YWwtZm9yLWJoYXJhdC1iaW90ZWNocy1jb3ZheGluL2FydGljbGUzMzQ4MTI2OC5lY2XSAZsBaHR0cHM6Ly93d3cudGhlaGluZHUuY29tL3NjaS10ZWNoL2hlYWx0aC9jb3JvbmF2aXJ1cy1jZW50cmFsLWRydWdzLWF1dGhvcml0eS1wYW5lbC1yZWNvbW1lbmRzLWFwcHJvdmFsLWZvci1iaGFyYXQtYmlvdGVjaHMtY292YXhpbi9hcnRpY2xlMzM0ODEyNjguZWNlL2FtcC8?hl=en-IN&gl=IN&ceid=IN%3Aen',
+            'https://www.tvsmotor.com/-/media/Feature/Blog/Did-you-know/Benefits-of-Biking.jpg?h=675&w=1200&la=en&hash=525DFA8CC3DD63D3488CEEC42EEEB70A',
         publishedAt: 'null',
-        sourceName: "ass",
-        sourceId: "1")
+        sourceName: "News",
+        sourceId: "1"),
+    new News(
+        title: 'Helmet Safety Ratings Explained',
+        content: '10 Points That Prove Biking Is A Form Of Therapy',
+        description: 'What Do They Encompass; DOT, ECE And Snell ',
+        // path:
+        // 'https://news.google.com/articles/CAIiEJS8aLG1fl-DjABPRy7LTakqFAgEKgwIACoFCAowhgIwkDgw0O8B?hl=en-IN&gl=IN&ceid=IN%3Aen',
+        imagePath:
+            'https://www.tvsmotor.com/-/media/Feature/Blog/Did-you-know/Helmet-Safety-Ratings.jpg?h=675&w=1200&la=en&hash=1BE8FC82F21CB56E54942F9D8FD5095E',
+        publishedAt: 'null',
+        sourceName: "News",
+        sourceId: "2")
   ];
 
   @override
@@ -132,7 +138,7 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
           itemBuilder: (BuildContext ctxt, int index) {
             return _buildListItem(news[index], ctxt);
           },
-          itemCount: 1,
+          itemCount: news.length,
         ))
       ]),
     );
@@ -155,7 +161,7 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
             Container(
                 margin: EdgeInsets.only(bottom: 5, left: 25),
                 child: Text(
-                  "Source: newsapi.org - ${news.sourceName}",
+                  "Source: https://www.tvsmotor.com/blog/overview",
                   style: TextStyle(
                     fontWeight: FontWeight.normal,
                     color: Colors.grey,
@@ -178,19 +184,14 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
                     news.description == null || news.description.isEmpty
                         ? "NA"
                         : news.description,
-                    style: TextStyle(
-                        fontWeight: FontWeight.normal, fontSize: 14))),
+                    style:
+                        TextStyle(fontWeight: FontWeight.bold, fontSize: 14))),
             Divider(
               height: 20,
               color: Colors.grey,
             ),
             Row(
               children: <Widget>[
-                IconButton(
-                  icon: Icon(Icons.remove_red_eye),
-                  tooltip: "View",
-                  onPressed: () async {},
-                ),
                 IconButton(
                   icon: Icon(Icons.share),
                   tooltip: "Share",
@@ -211,7 +212,7 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
 }
 
 class Dash extends StatelessWidget {
-  static const String _title = 'TvsCREdit';
+  static const String _title = 'TvsCredit';
 
   @override
   Widget build(BuildContext context) {
