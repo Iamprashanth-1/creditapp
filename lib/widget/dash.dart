@@ -3,6 +3,7 @@ import '.././main.dart';
 import '../registration/text_recor.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import '../splashs.dart';
+import '../log.dart';
 
 //void main() => runApp(MyApp());
 final List<String> imgList = [
@@ -120,10 +121,8 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
     });
     //print(_selectedIndex);
     if (_selectedIndex == 1) {
-      Navigator.push(
-          context,
-          MaterialPageRoute(
-              builder: (context) => MainPage(title: "KYC ")));
+      Navigator.push(context,
+          MaterialPageRoute(builder: (context) => MainPage(title: "KYC ")));
     } else if (_selectedIndex == 2) {
       Navigator.push(
           context,
@@ -198,7 +197,8 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
               leading: Icon(Icons.logout),
               title: Text("Logout"),
               onTap: () {
-                Navigator.pop(context);
+                Navigator.pushReplacement(
+                    context, MaterialPageRoute(builder: (context) => Logg()));
               },
             ),
           ],
