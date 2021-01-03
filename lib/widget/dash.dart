@@ -182,13 +182,19 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           padding: EdgeInsets.zero,
           children: <Widget>[
             UserAccountsDrawerHeader(
-              accountName: Text("Welcome"),
+              decoration: BoxDecoration(color: Color(0xFF083386)),
+              accountName: Text(
+                "Welcome",
+                textAlign: TextAlign.center,
+              ),
               accountEmail: Text("abcd@gmail.com"),
               currentAccountPicture: CircleAvatar(
-                backgroundColor: Colors.orange,
+                backgroundColor: Colors.red,
                 child: Text(
                   "A",
-                  style: TextStyle(fontSize: 40.0),
+                  style: TextStyle(
+                    fontSize: 40.0,
+                  ),
                 ),
               ),
             ),
