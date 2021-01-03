@@ -7,8 +7,8 @@ import 'package:carousel_slider/carousel_slider.dart';
 import '../splashs.dart';
 import '../log.dart';
 import 'package:http/http.dart' as http;
+import 'package:webview_flutter/webview_flutter.dart';
 import 'list_item.dart';
-
 import 'news.dart';
 
 //void main() => runApp(MyApp());
@@ -22,6 +22,29 @@ final List<String> imgList = [
   'https://www.tvsmotor.com/-/media/Feature/Vehicles/vehicles/Homepage/Desktop/TVS_XL_2020.jpg?h=484&w=890&la=en&hash=C1E937552A12950B825982D3A403A477'
 ];
 
+class News {
+  String title;
+  String content;
+  String description;
+  String path;
+  String imagePath;
+  String publishedAt;
+  String sourceName;
+  String sourceId;
+
+  News(
+      {this.title,
+      this.content,
+      this.description,
+      this.path,
+      this.imagePath,
+      this.publishedAt,
+      this.sourceName,
+      this.sourceId});
+
+  // News.empty();
+}
+
 /// This is the main application widget.
 ///
 class CarouselWithIndicatorDemo extends StatefulWidget {
@@ -32,17 +55,23 @@ class CarouselWithIndicatorDemo extends StatefulWidget {
 }
 
 class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
-  List<Article> _newsList = new List();
-
-  void getData() async {
-    http.Response response = await http.get(
-        "https://newsapi.org/v2/top-headlines?country=us&apiKey=821a22ad51e240fb9c131c4b00009630");
-    setState(() {
-      _newsList = News.fromJson(jsonDecode(response.body)).articles;
-    });
-  }
-
   int _current = 0;
+  final List<String> entries = <String>['A', 'B', 'C'];
+  final List<int> colorCodes = <int>[600, 500, 100];
+
+  List<News> news = [
+    News(
+        title: 'title',
+        content: 'conten2t',
+        description: 'des',
+        path:
+            'https://news.google.com/articles/CAIiEJS8aLG1fl-DjABPRy7LTakqFAgEKgwIACoFCAowhgIwkDgw0O8B?hl=en-IN&gl=IN&ceid=IN%3Aen',
+        imagePath:
+            'https://news.google.com/articles/CBMilgFodHRwczovL3d3dy50aGVoaW5kdS5jb20vc2NpLXRlY2gvaGVhbHRoL2Nvcm9uYXZpcnVzLWNlbnRyYWwtZHJ1Z3MtYXV0aG9yaXR5LXBhbmVsLXJlY29tbWVuZHMtYXBwcm92YWwtZm9yLWJoYXJhdC1iaW90ZWNocy1jb3ZheGluL2FydGljbGUzMzQ4MTI2OC5lY2XSAZsBaHR0cHM6Ly93d3cudGhlaGluZHUuY29tL3NjaS10ZWNoL2hlYWx0aC9jb3JvbmF2aXJ1cy1jZW50cmFsLWRydWdzLWF1dGhvcml0eS1wYW5lbC1yZWNvbW1lbmRzLWFwcHJvdmFsLWZvci1iaGFyYXQtYmlvdGVjaHMtY292YXhpbi9hcnRpY2xlMzM0ODEyNjguZWNlL2FtcC8?hl=en-IN&gl=IN&ceid=IN%3Aen',
+        publishedAt: 'null',
+        sourceName: "ass",
+        sourceId: "1")
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -98,12 +127,85 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
             );
           }).toList(),
         ),
-        Container(
+        Expanded(
             child: ListView.builder(
-          itemCount: _newsList.length,
-          itemBuilder: (context, index) => ListItem(_newsList[index]),
+          itemBuilder: (BuildContext ctxt, int index) {
+            return _buildListItem(news[index], ctxt);
+          },
+          itemCount: 1,
         ))
       ]),
+    );
+  }
+
+  _buildListItem(News news, BuildContext context) {
+    return Card(
+      child: Container(
+        padding: EdgeInsets.only(top: 10),
+        child: Column(
+          children: <Widget>[
+            Container(
+                margin: EdgeInsets.only(top: 5, left: 15, bottom: 5, right: 5),
+                child: Text(
+                    news.title == null || news.title.isEmpty
+                        ? "NA"
+                        : news.title,
+                    style:
+                        TextStyle(fontWeight: FontWeight.bold, fontSize: 16))),
+            Container(
+                margin: EdgeInsets.only(bottom: 5, left: 25),
+                child: Text(
+                  "Source: newsapi.org - ${news.sourceName}",
+                  style: TextStyle(
+                    fontWeight: FontWeight.normal,
+                    color: Colors.grey,
+                    fontSize: 10,
+                  ),
+                  textAlign: TextAlign.left,
+                )),
+            Container(
+              margin: EdgeInsets.only(bottom: 15, top: 0),
+              decoration: BoxDecoration(color: Colors.grey),
+              child: news.imagePath == null || news.imagePath.isEmpty
+                  ? SizedBox(
+                      height: 10,
+                    )
+                  : Image.network(news.imagePath, fit: BoxFit.fitWidth),
+            ),
+            Container(
+                margin: EdgeInsets.only(top: 5, left: 10),
+                child: Text(
+                    news.description == null || news.description.isEmpty
+                        ? "NA"
+                        : news.description,
+                    style: TextStyle(
+                        fontWeight: FontWeight.normal, fontSize: 14))),
+            Divider(
+              height: 20,
+              color: Colors.grey,
+            ),
+            Row(
+              children: <Widget>[
+                IconButton(
+                  icon: Icon(Icons.remove_red_eye),
+                  tooltip: "View",
+                  onPressed: () async {},
+                ),
+                IconButton(
+                  icon: Icon(Icons.share),
+                  tooltip: "Share",
+                  onPressed: () {},
+                )
+              ],
+              crossAxisAlignment: CrossAxisAlignment.end,
+              mainAxisAlignment: MainAxisAlignment.end,
+            )
+          ],
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+        ),
+      ),
+      margin: EdgeInsets.only(top: 10, left: 10, right: 10),
     );
   }
 }
