@@ -159,9 +159,9 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
                     style:
                         TextStyle(fontWeight: FontWeight.bold, fontSize: 16))),
             Container(
-                margin: EdgeInsets.only(bottom: 5, left: 25),
+                margin: EdgeInsets.only(bottom: 5, left: 18),
                 child: Text(
-                  "Source: https://www.tvsmotor.com/blog/overview",
+                  "Source: TVS motors website",
                   style: TextStyle(
                     fontWeight: FontWeight.normal,
                     color: Colors.grey,
