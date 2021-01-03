@@ -101,6 +101,7 @@ class SplashScreenState extends State<AnimatedSplashScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFFFFFFFF),
       body: Stack(
         fit: StackFit.expand,
         children: <Widget>[
