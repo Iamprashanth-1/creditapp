@@ -83,6 +83,14 @@ flutter:
     - assets/images/dan.jpg
     - assets/images/race.jpg
     - assets/images/close.png
+    - assets/images/th.png
+    - assets/images/sso.png
+    - assets/images/ress.jpg
+    - assets/images/vro.jpg
+
+
+
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

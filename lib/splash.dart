@@ -42,12 +42,12 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        color: Colors.white,
+        color: Color(0xFFFFFFFF),
         child: Container(
           decoration: BoxDecoration(
               image: DecorationImage(
             image: NetworkImage(
-                "https://th.bing.com/th/id/OIP.7Ee6fac3lfxTtM0hvkmyIQHaHa?w=192&h=192&c=7&o=5&dpr=1.25&pid=1.7"),
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjUOlpOI_Qm9kR4jgSLSo3ckrheZcN5Gdwmg&usqp=CAU"),
           )),
         ));
   }
@@ -61,7 +61,6 @@ class AnimatedSplashScreen extends StatefulWidget {
 class SplashScreenState extends State<AnimatedSplashScreen>
     with SingleTickerProviderStateMixin {
   var _visible = true;
-
   AnimationController animationController;
   Animation<double> animation;
 
@@ -101,6 +100,7 @@ class SplashScreenState extends State<AnimatedSplashScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFFFFFFFF),
       body: Stack(
         fit: StackFit.expand,
         children: <Widget>[

@@ -11,7 +11,8 @@ final List<String> imgList = [
   'https://www.tvsmotor.com/-/media/Feature/Our-Stories/TVS-iQube-EV-D.png?h=786&w=436&la=en&hash=B0E03ADDF7A72200D7209DFA33BBEF7F',
   'https://www.tvsmotor.com/-/media/Feature/About-US/racing-hero.jpg',
   'https://www.tvsmotor.com/-/media/Feature/About-US/35-Million.png?h=261&w=434&la=en&hash=3DF006B1F0FC78236ABBC0CF1A2E9855',
-  'https://www.tvsmotor.com/-/media/Feature/About-US/vehicle-for-everyone-2.jpg?h=261&w=434&la=en&hash=DE4F7BED3DCC640B3D6933EC2503F23E'
+  'https://www.tvsmotor.com/-/media/Feature/About-US/vehicle-for-everyone-2.jpg?h=261&w=434&la=en&hash=DE4F7BED3DCC640B3D6933EC2503F23E',
+  'https://www.tvsmotor.com/-/media/Feature/Vehicles/vehicles/Homepage/Desktop/TVS_XL_2020.jpg?h=484&w=890&la=en&hash=C1E937552A12950B825982D3A403A477'
 ];
 
 /// This is the main application widget.
@@ -188,6 +189,13 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             ListTile(
               leading: Icon(Icons.contacts),
               title: Text("Contact Us"),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.logout),
+              title: Text("Logout"),
               onTap: () {
                 Navigator.pop(context);
               },

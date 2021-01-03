@@ -13,7 +13,6 @@ import 'package:status_alert/status_alert.dart';
 
 //import 'package:cool_alert/cool_alert.dart';
 
-
 import 'controls_widget.dart';
 
 class TextRecognitionWidget extends StatefulWidget {
