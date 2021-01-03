@@ -1,9 +1,15 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import '.././main.dart';
 import '../registration/text_recor.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import '../splashs.dart';
 import '../log.dart';
+import 'package:http/http.dart' as http;
+import 'list_item.dart';
+
+import 'news.dart';
 
 //void main() => runApp(MyApp());
 final List<String> imgList = [
@@ -26,6 +32,16 @@ class CarouselWithIndicatorDemo extends StatefulWidget {
 }
 
 class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
+  List<Article> _newsList = new List();
+
+  void getData() async {
+    http.Response response = await http.get(
+        "https://newsapi.org/v2/top-headlines?country=us&apiKey=821a22ad51e240fb9c131c4b00009630");
+    setState(() {
+      _newsList = News.fromJson(jsonDecode(response.body)).articles;
+    });
+  }
+
   int _current = 0;
 
   @override
@@ -82,6 +98,11 @@ class _CarouselWithIndicatorState extends State<CarouselWithIndicatorDemo> {
             );
           }).toList(),
         ),
+        Container(
+            child: ListView.builder(
+          itemCount: _newsList.length,
+          itemBuilder: (context, index) => ListItem(_newsList[index]),
+        ))
       ]),
     );
   }
